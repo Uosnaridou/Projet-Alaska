@@ -63,6 +63,10 @@ while ($donnees = $rep->fetch())
         <p><?php echo $donnees['commentaire']?></p>   
         <p><?php echo $donnees['signalement']?></p> 
 
+        <a href="../controller/controllerSignalement.php?signalement=ajoutSignalement&commentaire=<?php echo $donnees['id']; ?>&articles=<?= $_GET['articles']?>">Signaler</a>
+
+
+
     <?php
 } // Fin de la boucle des commentaires
 $rep->closeCursor();
