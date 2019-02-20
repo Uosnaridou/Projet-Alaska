@@ -13,8 +13,8 @@
     <header>
         <h1>Billet simple pour l'Alaska</h1>
         <div id="menu">
-        <a href="#menu">Accueil</a>
-        <a href="controller/controllerAdmin.php?admin=connexion">Admin</a>
+        <a href="../index.php">Accueil</a>
+        <a href="controller/controllerAdmin.php?admin=choixAdmin">Admin</a>
         </div>
     </header>
         
@@ -34,8 +34,9 @@
         <p><?php echo $donnees['message']?></p> 
         <p><?php $date = $donnees['date'];
         echo date('d-m-Y', strtotime($date));?></p>   
-<a href="controller/controllerArticles.php?articles=<?php echo $donnees['id']; ?>">Lire la suite</a>
-        
+<a href="controllerAdmin.php?admin=modificationBillets&articles=<?php echo $donnees['id']; ?>">modifier</a>
+  <a href="controllerAdmin.php?admin=suppressionBillets&articles=<?php echo $donnees['id']; ?>">Supprimer</a>
+      
         <?php
         }
         ?>
