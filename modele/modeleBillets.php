@@ -22,14 +22,44 @@ class billets {
             return $reponse;
         }
     
+        public function creationBillet(){
+            $bdd = $this->dbConnect();
+            if (isset($_POST['titre']) && isset($_POST['date']) && isset($_POST['categorie']) && isset($_POST['message'])){
+            $req = $bdd->prepare('INSERT INTO articles(titre, date, categorie, message) VALUES(:titre, :date, :categorie, :message)');
+            $req->execute(array(
+            'titre' => $_POST['titre'],
+            'date' => $_POST['date'],
+            'categorie' => $_POST['categorie'],
+            'message' => $_POST['message']
+            ));
+            
+        }
+      
+  } 
     
+        
+        public function modificationBillet(){
+                        if(!empty($_POST)){
+            $titre = $_POST['titre'];
+            $date = $_POST['date'];
+            $categorie = $_POST['categorie'];
+            $message = $_POST['message'];
 
+            $bdd = $this->dbConnect();
+            $rep = $bdd->prepare("UPDATE `articles` SET `message`= '" . $message . "' , `titre`= '" . $titre . "' , `date`= '" . $date . "' , `categorie`= '" . $categorie  . "' WHERE id = ?");
+            $rep->execute(array($_GET['articles']));
+                return $rep;
+            }
+        }
     
     
-    
-    
-    
-    
+            public function suppressionBillet(){
+            $bdd = $this->dbConnect();                         
+            $reponse = $bdd->prepare('DELETE FROM `articles` WHERE id = ?');
+            $reponse->execute(array($_GET['articles']));
+            return $reponse;
+    }
+
     
     
     

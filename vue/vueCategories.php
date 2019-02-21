@@ -22,7 +22,6 @@
     
 
     
-    <a href="../index.php">Retour à la liste des articles</a>
 
     
     <div id="articles">
@@ -43,51 +42,7 @@ $reponse->closeCursor();
 
     </div>
     
-    <div class="separation"></div>
-    
-    <div id="ajoutCommentaire">
-    
-    <form method="post" action="" id="form">
-            <div id="blockPseudo">
-        <label for="pseudo" class="label">Votre pseudonyme:</label><br />
-        <input type="text" name="pseudo" id="pseudo" required />
-
-                </div>
-        <div id="blockCommentaires">
-        <label for="pseudo" class="label">Votre commentaire:</label><br />
-           <textarea name="commentaire" id="messages" required></textarea>
-                    </div>
-            <div class="bouton">
-       <input type="submit" class="submit"/>
-                </div>
-            </form>
-    </div>
-    
-    
-    <div id="commentaires">
-    
-        <?php
-while ($donnees = $rep->fetch())
-{
-?>
-        <h2><?php echo htmlspecialchars ($donnees['pseudo'])?></h2>
-        <p><?php echo $donnees['commentaire']?>  
-
-        <a href="../controller/controllerSignalement.php?signalement=ajoutSignalement&commentaire=<?php echo $donnees['id']; ?>&articles=<?= $_GET['articles']?>">Signaler</a>
-            </p> 
-
-
-
-    <?php
-} // Fin de la boucle des commentaires
-$rep->closeCursor();
-?>
-        
-    </div>
-    
-    
-      
-    <footer>
+       <footer>
         <h3>Catégories :</h3>
 <ul>
   <li><a href="../controller/controllerCategories.php?categorie=jour">Jour</a></li>
@@ -97,6 +52,6 @@ $rep->closeCursor();
         
     
     </footer>
-
+    
     </body>
 </html>
