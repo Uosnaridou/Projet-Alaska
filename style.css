@@ -1,16 +1,236 @@
 body{
     overflow-x: hidden;
+        margin: 0;
+
 }
 header{
     display: flex;
 }
 h1{
-    width: 50%
-        
+   width: 50%;
+    display: flex;
+    justify-content: center;
+         color: #1e3158;
+   
 }
 #menu{
-      width: 8%;
+width: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
         
+}
+.slide {
+    height: 500px;
+    width: 100%;
+}
+#menu a{
+        width: 10%;
+    text-decoration: none;
+    color: #1e3158;
+}
+#menu a:hover{
+    color: black;
+}
+#articles, #listeArticles {
+        margin: auto;
+    width: 50%;
+    margin-top: 3%;
+}
+h2{
+    color: #1e3158;
+        display: flex;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+        color: #60759F;
+}
+#articles a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #1e3158;
+        margin-bottom: 10%;
+}
+#listeArticles a{
+    text-decoration: none;
+    color: #1e3158;
+}
+
+footer {
+    border-top: 1px #1e3158 solid;
+    width: 50%;
+        margin-top: 3%;
+}
+h3{
+        display: flex;
+    justify-content: center;
+    width: 50%;
+    color: #1e3158;
+    font-weight: bold;
+}
+ul {
+        display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+    color: #1e3158;
+}
+li a {
+        text-decoration: none;
+    color: #1e3158;
+}
+img + a {
+        text-decoration: none;
+    display: block;
+    color: #1e3158;
+    margin-left: 76px;
+    margin-top: 1%;
+}
+.separation{
+    border-top: 1px #1e3158 solid;
+    width: 50%;
+    margin: auto;
+}
+#ajoutCommentaire{
+        display: flex;
+    justify-content: center;
+margin-top: 2%;
+    margin-bottom: 1%;
+}
+#ajoutCommentaire form{
+    display: flex;
+    
+}
+#blockPseudo{
+ margin-right: 1%;
+}
+#blockCommentaire{
+    margin-left: 1%;
+}
+#pseudo{
+        height: 30px;
+}
+.label{
+        display: flex;
+    justify-content: center;
+    color: #1e3158;
+}
+.bouton{
+        height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: 5%;
+}
+.bouton  input {
+    background-color: #60759fbf;
+    border-color: #60759fbf;
+    color: #FFFFFF;
+    border-radius: 4%;
+    cursor: pointer;
+}
+#commentaires{
+        margin-bottom: 5%;
+        width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+#commentaires a{
+        text-decoration: none;
+    color: #1e3158;
+    font-weight: bold;
+}
+#formConnexion label{
+    color : #1e3158;
+}
+.submitConnexion{
+    display: flex;
+    margin: auto;
+        background-color: #60759fbf;
+    border-color: #60759fbf;
+    color: #FFFFFF;
+    border-radius: 4%;
+    cursor: pointer;
+        height: 26px;
+}
+#connexion{
+    margin-top: 4%;
+}
+#choix{
+        display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+.encadrement{
+        border: 1px #1e3158 solid;
+    border-radius: 5%;
+    height: 40px;
+    width: 8%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.encadrement a{
+    text-decoration: none;
+    color: #60759F;
+        font-weight: bold;
+
+}
+#valider{
+        display: flex;
+        margin: auto;
+    margin-top: 3%;
+        background-color: #60759fbf;
+    border-color: #60759fbf;
+    color: #FFFFFF;
+    border-radius: 4%;
+    cursor: pointer;
+}
+#formulaire {
+        display: flex;
+    flex-direction: column;
+    width: 66%;
+    margin: auto;
+}
+div#mceu_11 {
+    height: 330px;
+}
+div#mceu_26 {
+    height: 225px;
+}
+#formulaire label{
+        color: #1e3158;
+    font-size: 17px;
+}
+#commentaireSignaler a{
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #1e3158;
+        margin-bottom: 10%;
+}
+#commentaireSignaler{
+        width: 50%;
+    margin: auto;
+        margin-top: 4%;
+}
+#lien{
+        display: flex;
+    justify-content: space-around;
+    margin-bottom: 15%;
 }
