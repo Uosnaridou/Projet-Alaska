@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Billet simple pour l'Alaska</title>
 
@@ -13,38 +13,44 @@
     <header>
         <h1>Billet simple pour l'Alaska</h1>
         <div id="menu">
-        <a href="#menu">Accueil</a>
-        <a href="controller/controllerAdmin.php?admin=connexion">Admin</a>
+        <a href="../index.php">Accueil</a>
+        <a href="../controller/controllerAdmin.php?admin=connexion">Admin</a>
         </div>
     </header>
         
-<img src="img/alaska.jpg" alt="imageSlideAlaska" class="slide" />
+<img src="../img/alaska.jpg" alt="imageSlideAlaska" class="slide" />
+<a href="../vue/vueChoix.php">Retour au choix de l'administrateur</a>
 
-    <div id='articles'>
+    <div id='listeArticles'>
             <?php 
         $bdd = new PDO('mysql:host=localhost;dbname=projet4','root','', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         
-        $requete = $bdd->query('SELECT id, titre, categorie, date, SUBSTRING(message, 1, 1000) AS ExtractString FROM articles ORDER BY `id` DESC LIMIT 4');
+        $requete = $bdd->query('SELECT id, titre, categorie, message, date FROM articles');
         
         while($donnees = $requete -> fetch())
       { ?>
         
         <h2><?php echo htmlspecialchars ($donnees['titre'])?></h2>
+        <p><?php echo $donnees['categorie']?></p>   
+        <p><?php echo $donnees['message']?></p> 
         <p><?php $date = $donnees['date'];
         echo date('d-m-Y', strtotime($date));?></p>   
-        <p><?php echo nl2br(htmlspecialchars($donnees['ExtractString']));?>..</p> 
-        <p><?php echo $donnees['categorie']?></p>   
-<a href="controller/controllerArticles.php?articles=<?php echo $donnees['id']; ?>">Lire la suite</a>
-        
+    <div id="lien">
+<a href="controllerAdmin.php?admin=modificationBillets&articles=<?php echo $donnees['id']; ?>">modifier</a>
+  <a href="controllerAdmin.php?admin=suppressionBillets&articles=<?php echo $donnees['id']; ?>">Supprimer</a>
+      </div>
         <?php
         }
         ?>
     
     
+    
+    
+    
+    
     </div>
     
-    
-    <footer>
+        <footer>
         <h3>Catégories :</h3>
 <ul>
   <li><a href="controller/controllerCategories.php?categorie=jour">Jour</a></li>
